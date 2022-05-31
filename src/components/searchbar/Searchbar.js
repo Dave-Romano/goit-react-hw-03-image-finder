@@ -13,13 +13,12 @@ class Searchbar extends Component {
 
   handleSubmit = e => {
     e.preventDefault();
+    if (this.state.searchWord.trim() === '') {
+      return alert('please enter search word');
+    }
     this.props.handleFormSubmitt(this.state.searchWord);
     this.setState({ searchWord: '' });
   };
-
-  // stateReset = () => {
-  //   this.setState({ name: '', number: '' });
-  // };
 
   render() {
     return (
